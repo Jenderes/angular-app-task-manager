@@ -1,1 +1,16 @@
-<p>main works!</p>
+<div class="main_menu" >
+    <div class="vertical_menu">
+        <div class="a_vertical">
+            <a href="/#/task" class="a__button" (click)="nameThis(div1.innerText)" #div1>Задачи</a>
+            <a href="/#/statistic" class="a__button" (click)="nameThis(div2.innerText)" #div2>Статистика</a>
+            <a href="/#/timeline" class="a__button" (click)="nameThis(div3.innerText)" #div3>Таймлайн</a>
+            <a href="/#/contacts" class="a__button" (click)="nameThis(div4.innerText)" #div4>Контакты</a>
+        </div>
+    </div>
+    <div class="subcomponent">
+        <div class="name_subcomponent">
+            {{nameblock}}
+        </div>
+        <router-outlet></router-outlet>
+    </div>
+</div>

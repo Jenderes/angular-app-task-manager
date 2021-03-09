@@ -6,10 +6,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./main.component.less']
 })
 export class MainComponent implements OnInit {
-
+  nameblock = "ЗАДАЧИ";
   constructor() { }
 
   ngOnInit(): void {
   }
 
+  nameThis(nameblock: any){
+    this.nameblock = nameblock;
+  }
 }

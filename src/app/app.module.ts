@@ -20,7 +20,10 @@ import { MainComponent } from './main/main.component';
 import { StatisticComponent } from './main/statistic/statistic.component';
 import { TimelineComponent } from './main/timeline/timeline.component';
 import { ContactsComponent } from './main/contacts/contacts.component';
-
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatButtonModule} from '@angular/material/button';
+import {MatIconModule} from '@angular/material/icon';
+import { SettingsComponent } from './settings/settings.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -35,7 +38,8 @@ import { ContactsComponent } from './main/contacts/contacts.component';
     MainComponent,
     StatisticComponent,
     TimelineComponent,
-    ContactsComponent
+    ContactsComponent,
+    SettingsComponent
   ],
   imports: [
     BrowserModule,
@@ -43,7 +47,10 @@ import { ContactsComponent } from './main/contacts/contacts.component';
     FormsModule,
     RouterModule,
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    BrowserAnimationsModule,
+    MatButtonModule,
+    MatIconModule
   ],
   providers: [authInterceptorProviders, {provide: LocationStrategy, useClass: HashLocationStrategy}],
   bootstrap: [AppComponent]
