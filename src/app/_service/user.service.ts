@@ -13,9 +13,12 @@ export class UserService {
   constructor(private http: HttpClient ) { }
 
   getContacts(): Observable <any> {
-    return this.http.get(API_URL + 'contacts');
+    return this.http.get(API_URL + 'user/contacts');
   }
-  getUser(id: string): Observable <any> {
-    return this.http.get(API_URL + 'user');
+  getStatistic(): Observable<any> {
+    return this.http.get(API_URL + 'user/statistic');
+  }
+  getProfileContacts(userId: number): Observable<any> {
+    return this.http.get(API_URL + 'user/' + userId);
   }
 }

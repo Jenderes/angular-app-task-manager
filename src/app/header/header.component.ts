@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {TokenStorageService} from '../_service/token-storage.service'
+import {TokenStorageService} from '../_service/token-storage.service';
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
@@ -11,6 +11,7 @@ export class HeaderComponent implements OnInit {
 
   ngOnInit(): void {
     this.isLoggedIn = !!this.tokenStorageService.getToken();
+    console.log(this.isLoggedIn);
   }
 
 }

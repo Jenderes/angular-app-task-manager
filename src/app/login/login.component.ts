@@ -1,6 +1,6 @@
-import { Component, OnInit } from "@angular/core";
-import { AuthService } from "../_service/auth.service";
-import { TokenStorageService } from "../_service/token-storage.service";
+import { Component, OnInit } from '@angular/core';
+import { AuthService } from '../_service/auth.service';
+import { TokenStorageService } from '../_service/token-storage.service';
 
 @Component({
   selector: 'app-login',
@@ -8,7 +8,7 @@ import { TokenStorageService } from "../_service/token-storage.service";
   styleUrls: ['./login.component.less']
 })
 export class LoginComponent implements OnInit {
-  loginForm : any = {};
+  loginForm: any = {};
   errorMessage = '';
 
   isLoggedIn = false;
@@ -22,9 +22,7 @@ export class LoginComponent implements OnInit {
     }
   }
 
-  /**
-   * Метод для логина
-   */
+  // метод авторизации пользователя с занесением данных в sessionStorage
   login(): void {
     this.authService.login(this.loginForm).subscribe(
       loginData => {
@@ -32,7 +30,7 @@ export class LoginComponent implements OnInit {
         this.tokenStorage.saveUser(loginData);
         this.isLoginFailed = false;
         this.isLoggedIn = true;
-        window.location.replace('/#/main');
+        window.location.replace('/#/');
       },
       err => {
         this.errorMessage = 'Неправильный логин или пароль';

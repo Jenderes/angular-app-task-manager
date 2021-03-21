@@ -1,1 +1,5 @@
-<p>contacts works!</p>
+<div class="body_contacts">
+  <div class="contact" *ngFor="let contact of dataSource">
+    <div class="contactFullName" (click)="getId(contact.userId)" >{{contact.firstName}} {{contact.lastName}}</div>
+  </div>
+</div>

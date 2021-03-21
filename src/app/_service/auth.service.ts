@@ -26,4 +26,5 @@ export class AuthService {
       lastname: user.value.lastname
     }, HttpOptions);
   }
+
 }

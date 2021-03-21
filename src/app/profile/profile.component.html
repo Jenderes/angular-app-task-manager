@@ -8,7 +8,7 @@
                 Логин:
             </div>
             <div class="name_desc">
-                jender
+              {{currentUser.username}}
             </div>
         </div>
         <div class="profile__fullname prof__div">
@@ -16,7 +16,7 @@
                 Полное имя:
             </div>
             <div class="name_desc">
-                Джангоев Ростислав
+              {{currentUser.firstname}} {{currentUser.lastname}}
             </div>
         </div>
         <div class="profile__email prof__div">
@@ -24,7 +24,7 @@
                 Email:
             </div>
             <div class="name_desc">
-                frodlycin@gmail.com
+              {{currentUser.email}}
             </div>
         </div>
         <div class="profile__roles prof__div">
@@ -32,7 +32,7 @@
                 Роль:
             </div>
             <div class="name_desc">
-                Пользователь
+              {{currentUser.roles[0]}}
             </div>
         </div>
         <button mat-raised-button class = "change__button">Сменить пароль</button>

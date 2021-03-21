@@ -1,4 +1,4 @@
-import { Component,OnInit,Input } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import {TokenStorageService} from './_service/token-storage.service';
 @Component({
   selector: 'app-root',
@@ -6,7 +6,6 @@ import {TokenStorageService} from './_service/token-storage.service';
   styleUrls: ['./app.component.less']
 })
 export class AppComponent implements OnInit {
-  title = "CleverFront";
   private roles: string[];
   isLoggedIn = false;
   showAdminBoard = false;
@@ -19,13 +18,13 @@ export class AppComponent implements OnInit {
 
     if (this.isLoggedIn) {
       const user = this.tokenStorageService.getUser();
-      this.roles = user.roles;
-
-      this.showAdminBoard = this.roles.includes("ROLE_ADMIN");
       this.username = user.username;
+      window.location.replace('/#/task');
+    } else {
+      window.location.replace('/#/login');
     }
   }
-  logout() {
+  logout(): void {
     this.tokenStorageService.signOut();
     window.location.reload();
   }
