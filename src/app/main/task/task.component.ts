@@ -8,7 +8,7 @@ import {TaskService} from '../../_service/task.service';
   styleUrls: ['./task.component.less']
 })
 export class TaskComponent implements OnInit {
-  private dataSource: any[];
+  dataSource: any[];
   constructor(private taskService: TaskService, private tokenStorageService: TokenStorageService) { }
 
   ngOnInit(): void {

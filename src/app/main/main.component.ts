@@ -7,7 +7,7 @@ import {TokenStorageService} from '../_service/token-storage.service';
   styleUrls: ['./main.component.less']
 })
 export class MainComponent implements OnInit {
-  nameBlock = 'Задачи';
+  nameBlock = 'ЗАДАЧИ';
   constructor(private tokenStorageService: TokenStorageService) { }
 
   ngOnInit(): void {

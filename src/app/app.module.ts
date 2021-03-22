@@ -30,6 +30,7 @@ import {MatSelectModule} from '@angular/material/select';
 import {MatStepperModule} from '@angular/material/stepper';
 import {MatInputModule} from '@angular/material/input';
 import {MatTableModule} from '@angular/material/table';
+import { DatePipe } from '@angular/common';
 @NgModule({
   declarations: [
     AppComponent,
@@ -64,7 +65,7 @@ import {MatTableModule} from '@angular/material/table';
     MatInputModule,
     MatTableModule
   ],
-  providers: [authInterceptorProviders, {provide: LocationStrategy, useClass: HashLocationStrategy}],
+  providers: [DatePipe, authInterceptorProviders, {provide: LocationStrategy, useClass: HashLocationStrategy}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

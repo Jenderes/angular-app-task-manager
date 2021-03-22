@@ -7,9 +7,9 @@ import {TokenStorageService} from '../../_service/token-storage.service';
   styleUrls: ['./contacts.component.less']
 })
 export class ContactsComponent implements OnInit {
-  private dataSource: any[];
+  dataSource: any[];
   private currentUsername;
-  private idAttr;
+  isContact = false;
   constructor(private userService: UserService, private tokenStorageService: TokenStorageService) { }
 
   ngOnInit(): void {
@@ -23,8 +23,11 @@ export class ContactsComponent implements OnInit {
     }
   }
   getContactList(data: any[]): any {
-    this.dataSource = data;
-    console.log(data);
+    if (data != null){
+      this.isContact = true;
+      this.dataSource = data;
+      console.log(data);
+    }
   }
   getId(id): void {
     console.log(id);
