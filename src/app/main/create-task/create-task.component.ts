@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { AuthService } from "../_service/auth.service";
-import { TokenStorageService } from "../_service/token-storage.service";
+import { AuthService } from "../../_service/auth.service";
+import { TokenStorageService } from "../../_service/token-storage.service";
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 
 interface Work {
@@ -24,7 +24,7 @@ export class CreateTaskComponent implements OnInit {
   isLoggedIn = false;
   isLoginFailed = false;
   isLinear = false;
-  
+
   constructor(private authService: AuthService, private tokenStorage: TokenStorageService,private _formBuilder: FormBuilder) { }
 
   ngOnInit(): void {

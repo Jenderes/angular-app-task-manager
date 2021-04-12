@@ -40,6 +40,9 @@
       </div>
       <input type="text" class="register__input" placeholder = "Отчество (если есть)" name = "middleName" formControlName="middleName">
       <button class = "register__button" (click)="register()">Зарегистрироваться</button>
+      <div class="alert" *ngIf="f.submitted && isRegisterFailed">
+        {{ errorMessage }}
+      </div>
       <p class="register__message">Есть аккаунт? <a class="register__create" href="/#/login">Войти в аккаунт</a>
       </p>
     </form>

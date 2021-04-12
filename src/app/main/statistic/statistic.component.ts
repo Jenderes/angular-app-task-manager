@@ -1,5 +1,6 @@
 import {Component, OnInit } from '@angular/core';
 import {UserService} from '../../_service/user.service';
+import {ShareService} from '../../_service/share.service';
 
 @Component({
   selector: 'app-statistic',
@@ -18,10 +19,11 @@ export class StatisticComponent implements OnInit {
     countSendTask: 0,
     countTask: 0
   };
-  constructor(private userService: UserService) {
+  constructor(private userService: UserService, private shareService: ShareService) {
   }
 
   ngOnInit(): void {
+    this.shareService.setPage('Статистика');
     this.userService.getStatistic().subscribe(
       data => {
         this.getStatistic(data);
@@ -30,6 +32,5 @@ export class StatisticComponent implements OnInit {
   }
   getStatistic(data): void {
     this.dataSource = data;
-    console.log(this.dataSource);
   }
 }

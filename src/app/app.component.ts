@@ -19,7 +19,6 @@ export class AppComponent implements OnInit {
     if (this.isLoggedIn) {
       const user = this.tokenStorageService.getUser();
       this.username = user.username;
-      window.location.replace('/#/task');
     } else {
       window.location.replace('/#/login');
     }

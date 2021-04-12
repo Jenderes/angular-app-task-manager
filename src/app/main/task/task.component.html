@@ -1,4 +1,4 @@
-<div class="body_task">
+<div class="body_task" >
   <div class="task" *ngFor="let task of dataSource" (click)="getId(task.id)">
     <div class="taskHeader">{{task.taskHead}}</div>
     <div class="taskStart">{{task.dateStart}}</div>
@@ -7,4 +7,5 @@
     <div class="taskSend">{{task.tasGetEmployeeId}}</div>
     <div class="taskDescription">{{task.taskDescription}}</div>
   </div>
+  <button mat-raised-button color="primary" (click)="createTask()">Создать задачу</button>
 </div>

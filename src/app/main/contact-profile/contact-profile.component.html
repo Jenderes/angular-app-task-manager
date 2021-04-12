@@ -1,0 +1,32 @@
+<div class="profile">
+  <div class="profile_form">
+    <div class = "profile__name">
+      Профиль
+    </div>
+    <div class="profile__username prof__div">
+       <div class="desc">
+        Логин:
+      </div>
+      <div class="name_desc">
+        {{contactUser.username}}
+      </div>
+    </div>
+    <div class="profile__fullname prof__div">
+      <div class="desc">
+        Полное имя:
+      </div>
+      <div class="name_desc">
+        {{contactUser.firstName}} {{contactUser.lastName}}
+      </div>
+    </div>
+    <div class="profile__email prof__div">
+      <div class="desc">
+        Email:
+      </div>
+      <div class="name_desc">
+        {{contactUser.email}}
+      </div>
+    </div>
+    <button mat-raised-button class = "change__button">Убрать из контактов</button>
+  </div>
+</div>

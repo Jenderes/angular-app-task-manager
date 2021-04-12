@@ -1,6 +1,6 @@
 <div class="body_contacts" *ngIf="isContact">
-  <div class="contact" *ngFor="let contact of dataSource">
-    <div class="contactFullName" (click)="getId(contact.userId)" >{{contact.firstName}} {{contact.lastName}}</div>
+  <div class="contact" *ngFor="let contact of dataSource" (click)="getId(contact.userId)">
+    <div class="contactFullName">{{contact.firstName}} {{contact.lastName}}</div>
   </div>
 </div>
 <div class="body_contacts" *ngIf="!isContact">

@@ -14,13 +14,16 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NotFoundComponent } from './not-found/not-found.component';
 import {HeaderComponent} from './header/header.component';
 import {SettingsComponent} from './settings/settings.component';
-import {CreateTaskComponent} from './create-task/create-task.component';
+import {CreateTaskComponent} from './main/create-task/create-task.component';
+import {ContactProfileComponent} from './main/contact-profile/contact-profile.component';
 const routes: Routes = [
 { path: '', component:  MainComponent, children: [
   { path: 'task', component: TaskComponent},
   { path: 'statistic', component: StatisticComponent},
   { path: 'contacts', component: ContactsComponent},
-  { path: 'timeline', component: TimelineComponent}
+  { path: 'timeline', component: TimelineComponent},
+  { path: 'create_task', component: CreateTaskComponent},
+  { path: 'profile_contact', component: ContactProfileComponent},
 ]},
 { path: 'register', component: RegisterComponent },
 { path: 'login', component: LoginComponent },

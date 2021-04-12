@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, DoCheck } from '@angular/core';
 import {TokenStorageService} from '../_service/token-storage.service';
 import { DatePipe } from '@angular/common';
 @Component({
@@ -6,7 +6,7 @@ import { DatePipe } from '@angular/common';
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.less']
 })
-export class HeaderComponent implements OnInit {
+export class HeaderComponent implements OnInit, DoCheck {
   isLoggedIn = false;
   nowDate = new Date();
   dateString: any;
@@ -15,6 +15,8 @@ export class HeaderComponent implements OnInit {
   }
 
   ngOnInit(): void {
+  }
+  ngDoCheck(): void {
     this.isLoggedIn = !!this.tokenStorageService.getToken();
   }
   signOut(): void {

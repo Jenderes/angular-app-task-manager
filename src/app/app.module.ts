@@ -24,13 +24,14 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatButtonModule} from '@angular/material/button';
 import {MatIconModule} from '@angular/material/icon';
 import { SettingsComponent } from './settings/settings.component';
-import { CreateTaskComponent } from './create-task/create-task.component';
+import { CreateTaskComponent } from './main/create-task/create-task.component';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatSelectModule} from '@angular/material/select';
 import {MatStepperModule} from '@angular/material/stepper';
 import {MatInputModule} from '@angular/material/input';
 import {MatTableModule} from '@angular/material/table';
 import { DatePipe } from '@angular/common';
+import { ContactProfileComponent } from './main/contact-profile/contact-profile.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -47,7 +48,8 @@ import { DatePipe } from '@angular/common';
     TimelineComponent,
     ContactsComponent,
     SettingsComponent,
-    CreateTaskComponent
+    CreateTaskComponent,
+    ContactProfileComponent
   ],
   imports: [
     BrowserModule,

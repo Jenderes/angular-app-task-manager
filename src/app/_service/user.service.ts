@@ -18,7 +18,7 @@ export class UserService {
   getStatistic(): Observable<any> {
     return this.http.get(API_URL + 'user/statistic');
   }
-  getProfileContacts(userId: number): Observable<any> {
-    return this.http.get(API_URL + 'user/' + userId);
+  getProfileContact(userId: number): Observable<any> {
+    return this.http.get(API_URL + 'user/get/' + userId);
   }
 }
