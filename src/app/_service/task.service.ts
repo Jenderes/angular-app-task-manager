@@ -10,8 +10,8 @@ const httpOptions = GlobalVariable.httpOptions;
   providedIn: 'root'
 })
 export class TaskService {
-
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {
+  }
 
   GetGetedTask(): Observable<any> {
     return this.http.get(API_URL + 'task/get');

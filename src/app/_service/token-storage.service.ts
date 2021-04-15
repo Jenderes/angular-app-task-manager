@@ -28,7 +28,7 @@ export class TokenStorageService {
     window.sessionStorage.removeItem(USER_KEY);
     window.sessionStorage.setItem(USER_KEY, JSON.stringify(user));
   }
-  // Получение данных пользователя
+  // Получение данных пользователя из session storage
   public getUser(): any {
     return JSON.parse(sessionStorage.getItem(USER_KEY));
   }

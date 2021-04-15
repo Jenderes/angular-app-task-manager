@@ -24,11 +24,11 @@ const routes: Routes = [
   { path: 'timeline', component: TimelineComponent},
   { path: 'create_task', component: CreateTaskComponent},
   { path: 'profile_contact', component: ContactProfileComponent},
+  { path: 'profile', component: ProfileComponent},
 ]},
 { path: 'register', component: RegisterComponent },
 { path: 'login', component: LoginComponent },
 { path: 'user', component: UserComponent},
-{ path: 'profile', component: ProfileComponent},
 {path: 'settings', component: SettingsComponent},
 { path: '**', component: NotFoundComponent },
 ];

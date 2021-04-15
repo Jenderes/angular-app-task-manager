@@ -1,40 +1,40 @@
 <div class="profile">
-    <div class="profile_form">
-        <div class = "profile__name">
-            Профиль
-        </div>
-        <div class="profile__username prof__div">
-            <div class="desc">
-                Логин:
-            </div>
-            <div class="name_desc">
-              {{currentUser.username}}
-            </div>
-        </div>
-        <div class="profile__fullname prof__div">
-            <div class="desc">
-                Полное имя:
-            </div>
-            <div class="name_desc">
-              {{currentUser.firstname}} {{currentUser.lastname}}
-            </div>
-        </div>
-        <div class="profile__email prof__div">
-            <div class="desc">
-                Email:
-            </div>
-            <div class="name_desc">
-              {{currentUser.email}}
-            </div>
-        </div>
-        <div class="profile__roles prof__div">
-            <div class="desc">
-                Роль:
-            </div>
-            <div class="name_desc">
-              {{currentUser.roles[0]}}
-            </div>
-        </div>
-        <button mat-raised-button class = "change__button">Сменить пароль</button>
+  <div class="profile_form">
+    <div class="profile__name">
+      Профиль
     </div>
+    <div class="profile__username prof__div">
+      <div class="desc">
+        Логин:
+      </div>
+      <div class="name_desc">
+        {{currentUser.username}}
+      </div>
+    </div>
+    <div class="profile__fullname prof__div">
+      <div class="desc">
+        Полное имя:
+      </div>
+      <div class="name_desc">
+        {{currentUser.firstname}} {{currentUser.lastname}}
+      </div>
+    </div>
+    <div class="profile__email prof__div">
+      <div class="desc">
+        Email:
+      </div>
+      <div class="name_desc">
+        {{currentUser.email}}
+      </div>
+    </div>
+    <div class="profile__roles prof__div">
+      <div class="desc">
+        Роль:
+      </div>
+      <div class="name_desc">
+        {{currentUser.roles[0]}}
+      </div>
+    </div>
+    <button mat-raised-button class="change__button">Сменить пароль</button>
+  </div>
 </div>

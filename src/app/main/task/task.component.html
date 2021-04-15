@@ -1,11 +1,21 @@
 <div class="body_task" >
+  <button mat-raised-button color="primary" (click)="createTask()" class="create_task_button">Создать задачу</button>
   <div class="task" *ngFor="let task of dataSource" (click)="getId(task.id)">
-    <div class="taskHeader">{{task.taskHead}}</div>
-    <div class="taskStart">{{task.dateStart}}</div>
-    <div class="taskEnd">{{task.dateEnd}}</div>
-    <div class="taskWorkVariant">{{task.workVariant}}</div>
-    <div class="taskSend">{{task.tasGetEmployeeId}}</div>
-    <div class="taskDescription">{{task.taskDescription}}</div>
+    <div class="gen_task">
+      <div class="data_task">
+        <div class="task_header">{{task.taskHead}}</div>
+        <div class="task_date color__task_date_start">{{task.dateStart}}</div>
+        <div class="task_date color__task_date_end">{{task.dateEnd}}</div>
+        <div class="task_work_variant">{{task.workVariant}}</div>
+        <div class="task_sender_name">{{task.taskGetEmployeeId}}</div>
+      </div>
+      <div class="task_for_button">
+        <button (click)="cancelTask(task.id)" class="button_task cancel_task_button">Отменить</button>
+        <button (click)="completeTask(task.id)" class="button_task complete_task_button">Выполнить</button>
+      </div>
+    </div>
+    <div class="hide_task hidden__hide_task">
+      <div class="taskDescription">{{task.taskDescription}}</div>
+    </div>
   </div>
-  <button mat-raised-button color="primary" (click)="createTask()">Создать задачу</button>
 </div>
