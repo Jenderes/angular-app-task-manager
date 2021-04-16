@@ -28,7 +28,7 @@ export class TaskService {
       dateStart: credentials.dateStart,
       dateEnd: credentials.dateEnd,
       workVariant: credentials.workVariant,
-      useIdList: credentials.userIdList
+      useIdList: credentials.useIdList
     }, httpOptions);
   }
   changeTask(credentials): Observable<any>{
