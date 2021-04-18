@@ -32,6 +32,8 @@ import {MatInputModule} from '@angular/material/input';
 import {MatTableModule} from '@angular/material/table';
 import { DatePipe } from '@angular/common';
 import { ContactProfileComponent } from './main/contact-profile/contact-profile.component';
+import {MatDialogModule} from '@angular/material/dialog';
+import { DialogContactComponent } from './main/dialog-contact/dialog-contact.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -49,7 +51,8 @@ import { ContactProfileComponent } from './main/contact-profile/contact-profile.
     ContactsComponent,
     SettingsComponent,
     CreateTaskComponent,
-    ContactProfileComponent
+    ContactProfileComponent,
+    DialogContactComponent
   ],
   imports: [
     BrowserModule,
@@ -65,7 +68,8 @@ import { ContactProfileComponent } from './main/contact-profile/contact-profile.
     MatSelectModule,
     MatStepperModule,
     MatInputModule,
-    MatTableModule
+    MatTableModule,
+    MatDialogModule
   ],
   providers: [DatePipe, authInterceptorProviders, {provide: LocationStrategy, useClass: HashLocationStrategy}],
   bootstrap: [AppComponent]

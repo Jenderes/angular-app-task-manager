@@ -8,7 +8,7 @@
         Логин:
       </div>
       <div class="name_desc">
-        {{contactUser.username}}
+        {{contactData.username}}
       </div>
     </div>
     <div class="profile__fullname prof__div">
@@ -16,7 +16,7 @@
         Полное имя:
       </div>
       <div class="name_desc">
-        {{contactUser.firstName}} {{contactUser.lastName}}
+        {{contactData.firstName}} {{contactData.lastName}}
       </div>
     </div>
     <div class="profile__email prof__div">
@@ -24,9 +24,20 @@
         Email:
       </div>
       <div class="name_desc">
-        {{contactUser.email}}
+        {{contactData.email}}
       </div>
     </div>
-    <button mat-raised-button class = "change__button">Убрать из контактов</button>
+    <div class="profile__work prof__div">
+      <div class="desc">
+        Должность:
+      </div>
+      <div class="name_desc">
+        {{contactData.work}}
+      </div>
+    </div>
+    <div class="buttons_profile">
+      <button mat-raised-button class="delete_contact">Сменить пароль</button>
+      <button mat-raised-button class="back_button" (click)="returnContact()">Назад</button>
+    </div>
   </div>
 </div>

@@ -1,15 +1,57 @@
 <div class="create_task">
   <div class="window_task">
-    <input type = "text" placeholder="Заголово задачи" id="header_task">
-    <label for="body_task">Основной текст задачи</label>
-    <textarea cols="40" rows="3" placeholder="Основной текст задачи" id="body_task" ></textarea>
-    <label for="date_end">Дата сдачи</label>
-    <input type = "date" placeholder="Окончание задачи" id="date_end">
-    <select>
-      <option  label = "Разработка">
-      <option  label = "Дизайн">
-      <option  label = "Бизнесс аналитика">
-      <option  label = "Анализ">
-    </select>
+    <div class="input_add_task">
+      <input type="text" placeholder="Заголовок задачи" id="header_task" class="head_task" [(ngModel)]="task.textHeader">
+      <textarea cols="40" rows="3" placeholder="Основной текст задачи" id="body_task"
+                class="task_description" [(ngModel)]="task.textBody"></textarea>
+      <div class="date_div_check">
+        <div class="current_date">
+          <label for="date_start">Срок начала: </label>
+          <input type="date" placeholder="Окончание задачи" id="date_start" class="date_start"
+                 [attr.min]="currentDate" [disabled]="!isDisabled"
+                 [ngModel]="task.dateStart | date:'yyyy-MM-dd'"
+                 (ngModelChange)="task.dateStart = $event"
+                 (change)="setMinDate()">
+        </div>
+        <div class="cheсk_date">
+          <label>
+            <input type="checkbox" checked = "checked" class="check_date_current" (click)="disable()"/>
+            Текущая дата
+          </label>
+        </div>
+      </div>
+      <div class="date_div">
+        <label for="date_end">Срок выполнения: </label>
+        <input type="date" placeholder="Окончание задачи" id="date_end" class="date_end"
+               [attr.min]="task.dateStart"
+               [ngModel]="task.dateEnd | date:'yyyy-MM-dd'"
+               (ngModelChange)="task.dateEnd = $event">
+      </div>
+      <div class="work_select_label">
+        Вид работы:
+      </div>
+      <select class="work_select" [(ngModel)]="task.workVariant">
+        <option *ngFor="let work of works" ngValue="{{work.value}}">{{work.viewValue}}</option>
+      </select>
+      <div class="selector_user">
+        <button class="button_select_user" (click)="openDialog()">
+          Выбрать получателей
+        </button>
+        <div class="label_name_user">
+          Список получателей:
+        </div>
+        <div class="list_name_user">
+          <div class="name" *ngFor="let contact of contactArray">{{contact.firstName}} {{contact.lastName}} ; </div>
+        </div>
+      </div>
+      <div class="button_create">
+        <button class="button_create_task" (click)="createTask()">
+          Создать
+        </button>
+        <button class="button_cancel_task" (click)="returnTask()">
+          Отменить
+        </button>
+      </div>
+    </div>
   </div>
 </div>

@@ -16,10 +16,8 @@ export class ShareService {
   }
   public setPage(name): void {
     this.pageName = name;
-    console.log(this.pageName + ' ||');
   }
   public getPage(): string {
-    console.log(this.pageName);
     return this.pageName;
   }
 }

@@ -37,6 +37,6 @@ export class ContactsComponent implements OnInit {
   }
   getId(id): void {
     this.shareService.setId(id);
-    this.router.navigate(['/create_task']);
+    this.router.navigate(['/profile_contact']);
   }
 }

@@ -1,16 +1,37 @@
-<div class="main_menu" >
-    <div class="vertical_menu">
-        <div class="a_vertical">
-            <a href="/#/task" class="a__button" (click)="nameThis(div1.innerText)" #div1>Задачи</a>
-            <a href="/#/statistic" class="a__button" (click)="nameThis(div2.innerText)" #div2>Статистика</a>
-            <a href="/#/timeline" class="a__button" (click)="nameThis(div3.innerText)" #div3>Таймлайн</a>
-            <a href="/#/contacts" class="a__button" (click)="nameThis(div4.innerText)" #div4>Контакты</a>
-        </div>
+<div class="main_menu">
+  <div class="vertical_menu">
+    <div class="user_data">
+      <div class="user_name">
+        {{userFullName}}
+      </div>
+      <div class="user_email">
+        {{userEmail}}
+      </div>
     </div>
-    <div class="subcomponent">
-        <div class="name_subcomponent" >
-            {{nameBlock}}
-        </div>
-        <router-outlet></router-outlet>
+    <div class="a_vertical">
+      <div class="button_vertical_menu">
+        <img src="../../assets/images/clipboard.svg" alt="" class="button_icon">
+        <a href="/#/task" class="a__button" (click)="nameThis(div1.innerText)" #div1>Задачи</a>
+        <img src="../../assets/images/sort-down.svg" alt="" class="menu_icon">
+      </div>
+      <div class="button_vertical_menu">
+        <img src="../../assets/images/statistics.svg" alt="" class="button_icon">
+        <a href="/#/statistic" class="a__button" (click)="nameThis(div2.innerText)" #div2>Статистика</a>
+        <img src="../../assets/images/sort-down.svg" alt="" class="menu_icon">
+      </div>
+      <div class="button_vertical_menu">
+        <img src="../../assets/images/experience.svg" alt="" class="button_icon">
+        <a href="/#/timeline" class="a__button" (click)="nameThis(div3.innerText)" #div3>Таймлайн</a>
+        <img src="../../assets/images/sort-down.svg" alt="" class="menu_icon">
+      </div>
+      <div class="button_vertical_menu">
+        <img src="../../assets/images/user.svg" alt="" class="button_icon">
+        <a href="/#/contacts" class="a__button" (click)="nameThis(div4.innerText)" #div4>Контакты</a>
+        <img src="../../assets/images/sort-down.svg" alt="" class="menu_icon">
+      </div>
     </div>
+  </div>
+  <div class="subcomponent">
+    <router-outlet></router-outlet>
+  </div>
 </div>
