@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { from, Observable } from 'rxjs';
 import {HttpClient} from '@angular/common/http';
 import {GlobalVariable} from '../_helpers/variable.service';
+import {retry} from 'rxjs/operators';
 
 const API_URL = GlobalVariable.API_URL;
 const httpOptions = GlobalVariable.httpOptions;
@@ -20,15 +21,14 @@ export class TaskService {
   getSendTasks(): Observable<any> {
     return this.http.get(API_URL + 'task/send');
   }
-
-  saveTask(credentials): Observable<any> {
+  saveTask(task): Observable<any> {
     return this.http.post(API_URL + 'task/save', {
-      textHeader: credentials.textHeader,
-      textBody: credentials.textBody,
-      dateStart: credentials.dateStart,
-      dateEnd: credentials.dateEnd,
-      workVariant: credentials.workVariant,
-      useIdList: credentials.useIdList
+      taskHead: task.taskHead,
+      taskDescription: task.taskDescription,
+      dateStart: task.dateStart,
+      dateEnd: task.dateEnd,
+      taskGetEmployeeId: task.taskGetEmployeeId,
+      workVariant: task.workVariant
     }, httpOptions);
   }
   changeTask(credentials): Observable<any>{

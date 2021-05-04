@@ -1,4 +1,4 @@
-import {Component, OnInit, DoCheck} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {TokenStorageService} from '../_service/token-storage.service';
 import {ShareService} from '../_service/share.service';
 interface UserData {
@@ -13,7 +13,7 @@ interface UserData {
   templateUrl: './main.component.html',
   styleUrls: ['./main.component.less']
 })
-export class MainComponent implements OnInit, DoCheck {
+export class MainComponent implements OnInit {
   nameBlock;
   userEmail: string;
   userFullName: string;
@@ -27,9 +27,6 @@ export class MainComponent implements OnInit, DoCheck {
     const userData: UserData = this.tokenStorageService.getUser();
     this.userEmail = userData.email;
     this.userFullName = userData.firstname + ' ' + userData.lastname;
-  }
-  ngDoCheck(): void {
-    this.nameBlock = this.shareService.getPage();
   }
   nameThis(nameBlock: any): void{
     this.nameBlock = nameBlock;

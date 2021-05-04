@@ -18,11 +18,11 @@ interface DialogData {
   lastName: string;
 }
 interface TaskData {
-  textHeader: string;
-  textBody: string;
+  taskHead: string;
+  taskDescription: string;
   dateStart: string;
   dateEnd: string;
-  useIdList: number[];
+  taskGetEmployeeId: number[];
   workVariant: string;
 }
 @Component({
@@ -32,12 +32,12 @@ interface TaskData {
 })
 export class CreateTaskComponent implements OnInit {
   errorMessage = '';
-  firstFormGroup: FormGroup;
-  secondFormGroup: FormGroup;
   task: TaskData;
+  isCreateTask: boolean;
+  taskForm: FormGroup;
   works: Work[] = [
-    {value: 'DEVELOPE', viewValue: 'Разработка'},
-    {value: 'DESIGNER', viewValue: 'Дизайн'},
+    {value: 'DEVELOP', viewValue: 'Разработка'},
+    {value: 'DESIGN', viewValue: 'Дизайн'},
     {value: 'BUSINESS', viewValue: 'Бизнес аналитика'},
     {value: 'TESTING', viewValue: 'Тестирование'},
   ];
@@ -46,7 +46,7 @@ export class CreateTaskComponent implements OnInit {
   contactArray: DialogData[];
   isDisabled: boolean;
   currentDate: string;
-  dt: string;
+  employeeId: number[];
   constructor(private authService: AuthService,
               private tokenStorage: TokenStorageService,
               private taskService: TaskService,
@@ -55,22 +55,17 @@ export class CreateTaskComponent implements OnInit {
               private dialog: MatDialog,
               private router: Router) {
     this.task = {
-      textHeader: '',
-      textBody: '',
+      taskHead: '',
+      taskDescription: '',
       dateStart: '',
       dateEnd: '',
-      useIdList: [],
+      taskGetEmployeeId: [],
       workVariant: ''
     };
+    this.isCreateTask = true;
+    this.employeeId = [];
   }
-
   ngOnInit(): void {
-    this.firstFormGroup = this.formBuilder.group({
-      firstCtrl: ['', Validators.required]
-    });
-    this.secondFormGroup = this.formBuilder.group({
-      secondCtrl: ['', Validators.required]
-    });
     this.currentDate = this.datePipe.transform(this.nowDate, 'yyy-MM-dd');
     this.task.dateStart = this.currentDate;
     this.task.dateEnd = this.currentDate;
@@ -85,19 +80,26 @@ export class CreateTaskComponent implements OnInit {
     dialogRef.afterClosed().subscribe(result => {
       if (result.length !== 0) {
         this.contactArray = result;
-        this.task.useIdList = [];
-        console.log(result);
+        this.employeeId = [];
         for (const contactId of  result) {
-          this.task.useIdList.push(contactId.userId);
+          this.employeeId.push(contactId.userId);
         }
       }
     });
   }
 
   createTask(): void {
-    console.log(this.task);
-    this.taskService.saveTask(this.task);
-    // this.router.navigate(['/task']).then();
+    this.task.taskGetEmployeeId = this.employeeId;
+    this.taskService.saveTask(this.task).subscribe(
+      data => {
+        this.isCreateTask = true;
+        console.log(data);
+        this.router.navigate(['/task']).then();
+      },
+      error => {
+        this.isCreateTask = false;
+      }
+    );
   }
 
   returnTask(): void {

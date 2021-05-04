@@ -16,6 +16,7 @@ import {HeaderComponent} from './header/header.component';
 import {SettingsComponent} from './settings/settings.component';
 import {CreateTaskComponent} from './main/create-task/create-task.component';
 import {ContactProfileComponent} from './main/contact-profile/contact-profile.component';
+import {StructureComponent} from './main/structure/structure.component';
 const routes: Routes = [
 { path: '', component:  MainComponent, children: [
   { path: 'task', component: TaskComponent},
@@ -25,6 +26,7 @@ const routes: Routes = [
   { path: 'create_task', component: CreateTaskComponent},
   { path: 'profile_contact', component: ContactProfileComponent},
   { path: 'profile', component: ProfileComponent},
+  { path: 'structure', component: StructureComponent},
 ]},
 { path: 'register', component: RegisterComponent },
 { path: 'login', component: LoginComponent },

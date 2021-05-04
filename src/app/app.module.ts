@@ -34,6 +34,8 @@ import { DatePipe } from '@angular/common';
 import { ContactProfileComponent } from './main/contact-profile/contact-profile.component';
 import {MatDialogModule} from '@angular/material/dialog';
 import { DialogContactComponent } from './main/dialog-contact/dialog-contact.component';
+import { StructureComponent } from './main/structure/structure.component';
+import { ControlComponent } from './main/control/control.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -52,7 +54,9 @@ import { DialogContactComponent } from './main/dialog-contact/dialog-contact.com
     SettingsComponent,
     CreateTaskComponent,
     ContactProfileComponent,
-    DialogContactComponent
+    DialogContactComponent,
+    StructureComponent,
+    ControlComponent
   ],
   imports: [
     BrowserModule,

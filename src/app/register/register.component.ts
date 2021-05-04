@@ -3,6 +3,7 @@ import { AuthService } from '../_service/auth.service';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
 import { Router } from '@angular/router';
 import {match} from '../validators/match.validator';
+import {TaskService} from '../_service/task.service';
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
@@ -15,7 +16,7 @@ export class RegisterComponent implements OnInit {
   isRegister = false;
   isRegisterFailed = false;
 
-  constructor(private authService: AuthService, private router: Router) {
+  constructor(private authService: AuthService, private router: Router, private taskService: TaskService) {
     this.registerForm = new FormGroup({
       username: new FormControl('', []),
       firstName: new FormControl('', [Validators.required]),

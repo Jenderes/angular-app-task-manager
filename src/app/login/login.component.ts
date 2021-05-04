@@ -38,4 +38,7 @@ export class LoginComponent implements OnInit {
       }
     );
   }
+  ClickPoint(): void {
+    console.log('lol');
+  }
 }
